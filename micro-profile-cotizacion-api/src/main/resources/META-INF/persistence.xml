@@ -4,15 +4,24 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
                         http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+    <!--
     <persistence-unit name="jpa-unit" transaction-type="JTA">
         <jta-data-source>jdbc/eventjpadatasource</jta-data-source>
         <properties>
             <property name="jakarta.persistence.schema-generation.database.action"
-                      value="create"/>
+                      value="none"/>
             <property name="jakarta.persistence.schema-generation.scripts.action"
-                      value="create"/>
+                      value="none"/>
             <property name="jakarta.persistence.schema-generation.scripts.create-target"
                       value="createDDL.ddl"/>
+        </properties>
+    </persistence-unit>
+    -->
+    <persistence-unit name="jpa-unit" transaction-type="JTA">
+        <jta-data-source>jdbc/myDB</jta-data-source>
+        <properties>
+            <property name="eclipselink.ddl-generation" value="none"/>
+            <property name="eclipselink.ddl-generation.output-mode" value="both" />
         </properties>
     </persistence-unit>
 </persistence>

@@ -24,14 +24,29 @@
 
 
     <!-- Derby Library Configuration -->
+    <!--
     <library id="derbyJDBCLib">
         <fileset dir="${shared.resource.dir}/" includes="derby*.jar" />
     </library>
+    -->
+    <library id="jdbcLib">
+        <fileset dir="jdbc" includes="*.jar"/>
+    </library>
 
     <!-- Datasource Configuration -->
+    <!--
     <dataSource id="eventjpadatasource" jndiName="jdbc/eventjpadatasource">
         <jdbcDriver libraryRef="derbyJDBCLib" />
         <properties.derby.embedded databaseName="EventDB" createDatabase="create" />
     </dataSource>
+    -->
+    <dataSource jndiName="jdbc/myDB">
+        <jdbcDriver libraryRef="jdbcLib"/>
+        <properties serverName="localhost" portNumber="3306"
+                    databaseName="cotizacion"
+                    user="root"
+                    password="root"/>
+    </dataSource>
+
 
 </server>

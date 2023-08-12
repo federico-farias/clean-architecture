@@ -92,6 +92,19 @@
                 <jwt.issuer>https://server.example.com</jwt.issuer>
                 <app.context.root>/</app.context.root>
               </bootstrapProperties>
+
+              <copyDependencies>
+                <location>jdbc</location>
+                <dependency>
+                  <groupId>mysql</groupId>
+                  <artifactId>mysql-connector-java</artifactId>
+                  <!-- You can omit the version below if you have
+                       declared a dependency and want to simply use
+                       that version, or specify the version as shown
+                       if you don't include this artifact as a dependency. -->
+                  <version>8.0.26</version>
+                </dependency>
+              </copyDependencies>
             </configuration>
           </plugin>
           <plugin>
@@ -134,4 +147,5 @@
       </dependencies>
     </profile>
   </profiles>
+
 </project>

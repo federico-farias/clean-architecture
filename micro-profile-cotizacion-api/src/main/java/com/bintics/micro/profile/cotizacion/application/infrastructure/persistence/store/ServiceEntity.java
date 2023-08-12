@@ -1,9 +1,6 @@
 package com.bintics.micro.profile.cotizacion.application.infrastructure.persistence.store;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.EmbeddedId;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
@@ -16,6 +13,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
+@NamedQuery(name = "Service.findByQuoteId", query = "SELECT s FROM ServiceEntity s WHERE s.id.quoteId = :quoteId")
 public class ServiceEntity implements Serializable {
 
     @EmbeddedId
