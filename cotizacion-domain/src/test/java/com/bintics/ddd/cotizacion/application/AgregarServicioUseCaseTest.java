@@ -30,8 +30,9 @@ class AgregarServicioUseCaseTest {
 
     @Test
     public void deberiaAgregarUnServivio() {
+        CotizacionRepositorySpy cotizacionRepositorySpy = new CotizacionRepositorySpy(cotizacionRepository);
         AgregarServicioUseCase useCase = new AgregarServicioUseCase(
-                cotizacionRepository,
+                cotizacionRepositorySpy,
                 servicioRepository);
 
         String cotizacionId = "cotizacion-id-test";
@@ -39,6 +40,7 @@ class AgregarServicioUseCaseTest {
 
         AgregarServicioRequest request = new AgregarServicioRequest(cotizacionId, servicioId);
         useCase.agregarServicio(request);
+        cotizacionRepositorySpy.assertSave(1);
     }
 
     @Test

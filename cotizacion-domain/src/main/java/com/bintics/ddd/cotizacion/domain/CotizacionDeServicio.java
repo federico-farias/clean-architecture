@@ -1,6 +1,7 @@
 package com.bintics.ddd.cotizacion.domain;
 
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Date;
 import java.util.LinkedList;
@@ -32,6 +33,13 @@ public class CotizacionDeServicio {
 
     public CotizacionDeServicio() {
         this.id = UUID.randomUUID().toString();
+    }
+
+    public static CotizacionDeServicio create(String name, Servicio servicio) {
+        CotizacionDeServicio root = new CotizacionDeServicio();
+        root.nombre = name;
+        root.agregarServicio(servicio);
+        return root;
     }
 
     public CotizacionDeServicio(String id, String name, Double total, List<Servicio> servicios, Date createdAt, Date updatedAt) {

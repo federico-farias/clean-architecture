@@ -23,7 +23,7 @@ public class AgregarServicioUseCase {
             throw new ServicioNotFoundException("Servicio no encontrado [" + request.getServicioId() + "]");
         }
         cotizacion.agregarServicio(servicio);
-        //this.cotizacionRepository.save(cotizacion); // TODO: ¿Cómo probamos que se ejecuto el método save?
+        this.cotizacionRepository.save(cotizacion); // TODO: ¿Cómo probamos que se ejecuto el método save?
     }
 
 }
