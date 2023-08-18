@@ -1,7 +1,7 @@
-package com.bintics.ddd.cotizacion.domain;
+package com.bintics.ddd.cotizacion.domain.model;
 
+import com.bintics.ddd.cotizacion.domain.exception.ServivioAlreadyExistsExceotion;
 import lombok.Getter;
-import lombok.Setter;
 
 import java.util.Date;
 import java.util.LinkedList;

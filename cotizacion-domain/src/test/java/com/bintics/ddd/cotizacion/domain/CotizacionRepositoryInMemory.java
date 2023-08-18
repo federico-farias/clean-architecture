@@ -1,5 +1,8 @@
 package com.bintics.ddd.cotizacion.domain;
 
+import com.bintics.ddd.cotizacion.domain.model.CotizacionDeServicio;
+import com.bintics.ddd.cotizacion.domain.repository.CotizacionRepository;
+
 import java.util.List;
 
 public class CotizacionRepositoryInMemory implements CotizacionRepository {

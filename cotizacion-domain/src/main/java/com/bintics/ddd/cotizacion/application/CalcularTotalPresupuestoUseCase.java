@@ -1,6 +1,6 @@
 package com.bintics.ddd.cotizacion.application;
 
-import com.bintics.ddd.cotizacion.domain.CotizacionRepository;
+import com.bintics.ddd.cotizacion.domain.repository.CotizacionRepository;
 
 public class CalcularTotalPresupuestoUseCase {
 

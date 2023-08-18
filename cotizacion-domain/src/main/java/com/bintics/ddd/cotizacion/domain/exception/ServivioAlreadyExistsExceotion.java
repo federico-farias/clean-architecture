@@ -1,4 +1,4 @@
-package com.bintics.ddd.cotizacion.domain;
+package com.bintics.ddd.cotizacion.domain.exception;
 
     public class ServivioAlreadyExistsExceotion extends RuntimeException {
 

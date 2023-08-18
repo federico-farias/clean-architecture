@@ -1,29 +1,30 @@
 package com.bintics.ddd.cotizacion.application;
 
-import com.bintics.ddd.cotizacion.domain.*;
+import com.bintics.ddd.cotizacion.domain.model.CotizacionDeServicio;
+import com.bintics.ddd.cotizacion.domain.model.Servicio;
+import com.bintics.ddd.cotizacion.domain.repository.CotizacionRepository;
+import com.bintics.ddd.cotizacion.domain.repository.ServicioRepository;
+import com.bintics.ddd.cotizacion.domain.service.ContizacionFinder;
+import com.bintics.ddd.cotizacion.domain.service.ServiceFinder;
 
 public class AgregarServicioUseCase {
 
     private final CotizacionRepository cotizacionRepository;
 
-    private final ServicioRepository servicioRepository;
+    private final ServiceFinder serviceFinder;
+    private final ContizacionFinder cotizacionFinder;
 
     public AgregarServicioUseCase(CotizacionRepository cotizacionRepository, ServicioRepository servicioRepository) {
         this.cotizacionRepository = cotizacionRepository;
-        this.servicioRepository = servicioRepository;
+        this.serviceFinder = new ServiceFinder(servicioRepository);
+        this.cotizacionFinder = new ContizacionFinder(cotizacionRepository);
     }
 
     public void agregarServicio(AgregarServicioRequest request) {
-        CotizacionDeServicio cotizacion = this.cotizacionRepository.findById(request.getCotizacionId());
-        if (cotizacion == null) {
-            throw new CotizacionNotFoundException("Cotizacion no encontrada [" + request.getCotizacionId() + "]");
-        }
-        Servicio servicio = this.servicioRepository.findById(request.getServicioId());
-        if (servicio == null) {
-            throw new ServicioNotFoundException("Servicio no encontrado [" + request.getServicioId() + "]");
-        }
+        CotizacionDeServicio cotizacion = this.cotizacionFinder.find(request.getCotizacionId());
+        Servicio servicio = this.serviceFinder.find(request.getServicioId());
         cotizacion.agregarServicio(servicio);
-        this.cotizacionRepository.save(cotizacion); // TODO: ¿Cómo probamos que se ejecuto el método save?
+        this.cotizacionRepository.save(cotizacion);
     }
 
 }

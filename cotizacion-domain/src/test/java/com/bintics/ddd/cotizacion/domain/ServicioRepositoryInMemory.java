@@ -1,5 +1,8 @@
 package com.bintics.ddd.cotizacion.domain;
 
+import com.bintics.ddd.cotizacion.domain.model.Servicio;
+import com.bintics.ddd.cotizacion.domain.repository.ServicioRepository;
+
 import java.util.List;
 
 public class ServicioRepositoryInMemory implements ServicioRepository {

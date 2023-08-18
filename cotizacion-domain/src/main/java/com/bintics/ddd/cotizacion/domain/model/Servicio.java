@@ -1,4 +1,4 @@
-package com.bintics.ddd.cotizacion.domain;
+package com.bintics.ddd.cotizacion.domain.model;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

@@ -1,6 +1,12 @@
 package com.bintics.ddd.cotizacion.application;
 
 import com.bintics.ddd.cotizacion.domain.*;
+import com.bintics.ddd.cotizacion.domain.exception.CotizacionNotFoundException;
+import com.bintics.ddd.cotizacion.domain.exception.ServicioNotFoundException;
+import com.bintics.ddd.cotizacion.domain.model.CotizacionDeServicio;
+import com.bintics.ddd.cotizacion.domain.model.Servicio;
+import com.bintics.ddd.cotizacion.domain.repository.CotizacionRepository;
+import com.bintics.ddd.cotizacion.domain.repository.ServicioRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

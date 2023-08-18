@@ -1,4 +1,6 @@
-package com.bintics.ddd.cotizacion.domain;
+package com.bintics.ddd.cotizacion.domain.repository;
+
+import com.bintics.ddd.cotizacion.domain.model.CotizacionDeServicio;
 
 public interface CotizacionRepository {
 

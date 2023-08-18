@@ -1,5 +1,7 @@
 package com.bintics.ddd.cotizacion.domain;
 
+import com.bintics.ddd.cotizacion.domain.model.CotizacionDeServicio;
+import com.bintics.ddd.cotizacion.domain.repository.CotizacionRepository;
 import org.junit.jupiter.api.Assertions;
 
 public class CotizacionRepositorySpy implements CotizacionRepository {

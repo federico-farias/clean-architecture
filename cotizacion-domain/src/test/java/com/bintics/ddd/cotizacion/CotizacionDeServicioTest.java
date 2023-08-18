@@ -1,7 +1,7 @@
 package com.bintics.ddd.cotizacion;
 
-import com.bintics.ddd.cotizacion.domain.CotizacionDeServicio;
-import com.bintics.ddd.cotizacion.domain.Servicio;
+import com.bintics.ddd.cotizacion.domain.model.CotizacionDeServicio;
+import com.bintics.ddd.cotizacion.domain.model.Servicio;
 import org.junit.jupiter.api.Test;
 
 public class CotizacionDeServicioTest {
