@@ -1,7 +1,7 @@
 package com.bintics.ddd.cotizacion.infrastructure;
 
-import com.bintics.ddd.cotizacion.domain.CotizacionRepository;
-import com.bintics.ddd.cotizacion.domain.ServicioRepository;
+import com.bintics.ddd.cotizacion.domain.repository.CotizacionRepository;
+import com.bintics.ddd.cotizacion.domain.repository.ServicioRepository;
 import com.bintics.ddd.cotizacion.application.AgregarServicioUseCase;
 import io.micrometer.core.instrument.MeterRegistry;
 import io.micrometer.core.instrument.composite.CompositeMeterRegistry;

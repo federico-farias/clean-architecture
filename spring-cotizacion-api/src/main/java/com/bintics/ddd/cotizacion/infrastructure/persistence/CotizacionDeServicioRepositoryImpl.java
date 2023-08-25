@@ -1,8 +1,8 @@
 package com.bintics.ddd.cotizacion.infrastructure.persistence;
 
-import com.bintics.ddd.cotizacion.domain.CotizacionDeServicio;
-import com.bintics.ddd.cotizacion.domain.CotizacionRepository;
-import com.bintics.ddd.cotizacion.domain.Servicio;
+import com.bintics.ddd.cotizacion.domain.model.CotizacionDeServicio;
+import com.bintics.ddd.cotizacion.domain.repository.CotizacionRepository;
+import com.bintics.ddd.cotizacion.domain.model.Servicio;
 import com.bintics.ddd.cotizacion.infrastructure.persistence.store.*;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Repository;

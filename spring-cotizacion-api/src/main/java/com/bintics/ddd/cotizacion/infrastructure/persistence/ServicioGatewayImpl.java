@@ -1,7 +1,7 @@
 package com.bintics.ddd.cotizacion.infrastructure.persistence;
 
-import com.bintics.ddd.cotizacion.domain.Servicio;
-import com.bintics.ddd.cotizacion.domain.ServicioRepository;
+import com.bintics.ddd.cotizacion.domain.model.Servicio;
+import com.bintics.ddd.cotizacion.domain.repository.ServicioRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.UUID;
