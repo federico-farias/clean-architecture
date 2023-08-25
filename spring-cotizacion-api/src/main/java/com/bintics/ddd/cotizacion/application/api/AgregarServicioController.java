@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping
+@RequestMapping("/cotizacion")
 public class AgregarServicioController {
 
     private final AgregarServicioUseCase useCase;
@@ -16,7 +16,7 @@ public class AgregarServicioController {
         this.useCase = useCase;
     }
 
-    @PostMapping("/{cotizacionId}/servicios")
+    @PatchMapping("/{cotizacionId}/servicios")
     public ResponseEntity<?> agregarServicio(@PathVariable("cotizacionId") String cotizacionId, @RequestBody AgregarServicioHttpRequest request) {
         this.useCase.agregarServicio(
                 new AgregarServicioRequest(

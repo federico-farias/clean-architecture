@@ -1,8 +1,8 @@
 package com.bintics.ddd.cotizacion.infrastructure.persistence;
 
 import com.bintics.ddd.cotizacion.domain.model.CotizacionDeServicio;
-import com.bintics.ddd.cotizacion.domain.repository.CotizacionRepository;
 import com.bintics.ddd.cotizacion.domain.model.Servicio;
+import com.bintics.ddd.cotizacion.domain.repository.CotizacionRepository;
 import com.bintics.ddd.cotizacion.infrastructure.persistence.store.*;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Repository;
@@ -48,7 +48,7 @@ public class CotizacionDeServicioRepositoryImpl implements CotizacionRepository 
     public void save(CotizacionDeServicio cotizacion) {
         QuoteEntity quoteEntity = new QuoteEntity();
         quoteEntity.setId(cotizacion.getId());
-        quoteEntity.setName(cotizacion.getNombre());
+        quoteEntity.setName(cotizacion.getName().getValue());
         quoteEntity.setTotal(cotizacion.calcularPresupuestoTotal());
         quoteEntity.setCreatedAt(cotizacion.getCreatedAt()); // TODO: ¿Donde se setea?
         quoteEntity.setUpdatedAt(cotizacion.getUpdatedAt()); // TODO: ¿Donde se setea?

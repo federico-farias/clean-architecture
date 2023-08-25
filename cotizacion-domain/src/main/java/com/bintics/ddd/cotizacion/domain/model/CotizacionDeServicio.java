@@ -15,7 +15,7 @@ public class CotizacionDeServicio {
     private String id;
 
     @Getter
-    private String nombre;
+    private CotizacionName name;
 
     @Getter
     private List<Servicio> servicios = new LinkedList<>();
@@ -35,16 +35,16 @@ public class CotizacionDeServicio {
         this.id = UUID.randomUUID().toString();
     }
 
-    public static CotizacionDeServicio create(String name, Servicio servicio) {
+    public static CotizacionDeServicio create(CotizacionName name, Servicio servicio) {
         CotizacionDeServicio root = new CotizacionDeServicio();
-        root.nombre = name;
+        root.name = name;
         root.agregarServicio(servicio);
         return root;
     }
 
     public CotizacionDeServicio(String id, String name, Double total, List<Servicio> servicios, Date createdAt, Date updatedAt) {
         this.id = id;
-        this.nombre = name;
+        this.name = new CotizacionName(name);
         this.presupuestoTotal = total;
         this.servicios = servicios;
         this.createdAt = createdAt;

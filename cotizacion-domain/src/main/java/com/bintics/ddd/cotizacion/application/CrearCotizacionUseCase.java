@@ -1,7 +1,7 @@
 package com.bintics.ddd.cotizacion.application;
 
-import com.bintics.ddd.cotizacion.domain.exception.ServicioNotFoundException;
 import com.bintics.ddd.cotizacion.domain.model.CotizacionDeServicio;
+import com.bintics.ddd.cotizacion.domain.model.CotizacionName;
 import com.bintics.ddd.cotizacion.domain.model.Servicio;
 import com.bintics.ddd.cotizacion.domain.repository.CotizacionRepository;
 import com.bintics.ddd.cotizacion.domain.repository.ServicioRepository;
@@ -20,7 +20,7 @@ public class CrearCotizacionUseCase {
 
     public String crear(CrearCotizacionRequest request) {
         Servicio servicio = this.serviceFinder.find(request.getServicioId());
-        CotizacionDeServicio cotizacionDeServicio = CotizacionDeServicio.create(request.getName(), servicio);
+        CotizacionDeServicio cotizacionDeServicio = CotizacionDeServicio.create(new CotizacionName(request.getName()), servicio);
         this.repository.save(cotizacionDeServicio);
         return cotizacionDeServicio.getId();
     }
